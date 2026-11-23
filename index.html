@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c30">
+  <title>CarDreamVLA | Maneuver Accuracy Is Not Safety · ACML 2026</title>
+  <meta name="description" content="LongTailBench and CarDreamVLA: separating route execution, hazard recognition, and closed-loop reaction in autonomous driving. ACML 2026.">
+  <link rel="canonical" href="https://patience-joey.github.io/CarDreamVLA/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maneuver Accuracy Is Not Safety · ACML 2026">
+  <meta property="og:description" content="Long-tail hazard reaction in VLA driving with world models. Explore LongTailBench, the method, and the camera-ready results.">
+  <meta property="og:url" content="https://patience-joey.github.io/CarDreamVLA/">
+  <meta property="og:image" content="https://patience-joey.github.io/CarDreamVLA/assets/images/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="citation_title" content="Maneuver Accuracy Is Not Safety: Long-Tail Hazard Reaction in VLA Driving with World Models">
+  <meta name="citation_author" content="Cao, Xuewei">
+  <meta name="citation_author" content="Liu, Binhui">
+  <meta name="citation_author" content="Zhang, Yanyong">
+  <meta name="citation_author" content="Xia, Yan">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Asian Conference on Machine Learning (ACML)">
+  <meta name="citation_pdf_url" content="https://patience-joey.github.io/CarDreamVLA/assets/pdfs/main.pdf">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#top" aria-label="CarDreamVLA home"><span class="brand-mark" aria-hidden="true">C<span></span></span>CarDream<span class="brand-accent">VLA</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#method">Method</a><a href="#results">Results</a><a href="#benchmark">Benchmark</a><a href="#resources">Resources</a>
+      </nav>
+      <a class="nav-paper" href="assets/pdfs/main.pdf">Read paper <span class="file-type">PDF</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="top" aria-labelledby="paper-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="conference">ACML 2026</span><span>Autonomous driving · World models</span></div>
+        <h1 id="paper-title">Maneuver Accuracy<br>Is <em>Not Safety.</em></h1>
+        <p class="paper-subtitle">Long-Tail Hazard Reaction in VLA Driving with World Models</p>
+        <p class="hero-description">Following the route is only part of driving. We study what happens when a rare hazard demands a different reaction.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="assets/pdfs/main.pdf"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg>Paper</a>
+          <a class="button button-outline" href="assets/pdfs/supplementary.pdf">Supplementary</a>
+          <a class="button button-text" href="assets/pdfs/poster.pdf">Poster</a>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <div class="visual-topline"><span>LONGTAILBENCH</span><span>CARLA 0.9.15</span></div>
+        <img src="assets/images/parking-cut-in.webp" alt="A red vehicle enters the driving lane in a LongTailBench parking cut-in scenario." width="574" height="316" fetchpriority="high">
+        <figcaption><span class="frame-label">Parking cut-in</span><span>Front-camera frame from the paper</span></figcaption>
+        <div class="visual-question">A route tells the car where to go.<br><strong>What tells it when to react?</strong></div>
+      </figure>
+    </section>
+
+    <div class="authors-block section-shell">
+      <div class="authors" aria-label="Authors in publication order">
+        <a href="https://openreview.net/profile?id=~Xuewei_Cao2">Xuewei Cao<sup>1,2</sup></a>
+        <a href="https://openreview.net/profile?id=~Binhui_Liu5">Binhui Liu<sup>3,4</sup></a>
+        <a href="https://openreview.net/profile?id=~Yanyong_Zhang2">Yanyong Zhang<sup>1,2</sup></a>
+        <a href="https://openreview.net/profile?id=~Yan_Xia5">Yan Xia<sup>1,2,*</sup></a>
+      </div>
+      <div class="affiliations">
+        <p><sup>1</sup> School of Artificial Intelligence and Data Science, University of Science and Technology of China<br><sup>2</sup> Suzhou Institute for Advanced Research, University of Science and Technology of China</p>
+        <p><sup>3</sup> Anhui Jianghuai Automobile Group Company Ltd., Hefei 230022, China<br><sup>4</sup> Anhui Province Key Laboratory of Intelligent Connected Technology, Hefei 230601, China</p>
+      </div>
+      <p class="correspondence">* Corresponding author: <a href="mailto:yan.xia@ustc.edu.cn">Yan Xia</a></p>
+    </div>
+
+    <section class="takeaway-band" aria-label="Main finding">
+      <div class="section-shell takeaway-grid">
+        <div><span class="eyebrow light">THE FINDING</span><h2>Better route tokens do not<br>guarantee safer reactions.</h2></div>
+        <p>A calibrated temporal safety module reduces hazard-attributed collisions for a frozen driving policy. LongTailBench measures the gap from route execution to hazard recognition to action.</p>
+        <div class="takeaway-stat"><span>17.5<span class="stat-separator">% to</span>10.0<span class="stat-percent">%</span></span><p>Hazard-attributed collisions<br>Four-seed internal confirmation · 240 episodes / method</p></div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="method" aria-labelledby="method-title">
+      <div class="section-heading"><div><p class="eyebrow">THE METHOD</p><h2 id="method-title">From route planning<br>to hazard reaction.</h2></div><p>CarDreamVLA examines distinct planning and safety paths around a world-model driving policy.</p></div>
+      <div class="figure-heading"><h3>World-model driving with route conditioning</h3><a href="assets/images/figure2.svg">Open full-size figure</a></div>
+      <figure class="architecture-figure">
+        <a href="assets/images/figure2.svg" aria-label="Open the complete route-conditioned architecture figure"><img src="assets/images/figure2.svg" alt="The paper's route-conditioned base architecture: a DreamerV3 RSSM encodes scene observations, a frozen NavPlanner supplies maneuver tokens, and a token-conditioned actor–critic selects actions." width="1400" height="700" loading="lazy"></a>
+        <figcaption>The route-conditioned base from the paper. DreamerV3 encodes the scene, while the frozen NavPlanner supplies maneuver tokens to the actor–critic. The separate v13 safety module is described below.</figcaption>
+      </figure>
+      <div class="safety-explainer">
+        <div class="safety-intro"><span class="small-tag">v13 TEMPORAL SAFETY</span><h3>Keep the policy frozen.<br>Bound the safety correction.</h3><p>A separate temporal network combines four raster-LiDAR frames, semantic BEV, the frozen Dreamer latent, instruction ID, and base action.</p></div>
+        <div class="safety-steps">
+          <div><span class="step-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18V8l6-4 10 5v10l-6 2zM4 8l10 4 6-3M14 12v9M10 4v5"/></svg></span><div><h4>Encode temporal risk</h4><p>A CNN and GRU encode LiDAR history; fused features predict risk and a two-dimensional safe action.</p></div></div>
+          <div><span class="step-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 13h4l3-8 4 14 3-6h4M3 21h18"/></svg></span><div><h4>Confirm before intervening</h4><p>A separately trained LiDAR anchor uses validation-calibrated thresholds, smoothing, and consecutive-frame confirmation.</p></div></div>
+          <div><span class="step-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/></svg></span><div><h4>Apply bounded correction</h4><p>Confirmed risk activates bounded longitudinal and steering corrections. Outside active intervals, the frozen base action is preserved.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results" aria-labelledby="results-title">
+      <div class="section-shell content-section">
+        <div class="section-heading"><div><p class="eyebrow">CLOSED-LOOP EVIDENCE</p><h2 id="results-title">Measure safety<br>where it matters.</h2></div><p>Four held-out evaluation seeds.<br>240 episodes per method in Town03, Town04, and Town05.</p></div>
+        <div class="results-layout">
+          <div class="chart-panel">
+            <div class="chart-top"><h3 id="chart-heading">Hazard-attributed collision</h3><span id="metric-direction">Lower is better</span></div>
+            <div class="metric-switch" role="group" aria-label="Choose a result metric">
+              <button type="button" data-metric="hazard" aria-pressed="true">Hazard collision</button>
+              <button type="button" data-metric="near" aria-pressed="false">Near miss</button>
+              <button type="button" data-metric="any" aria-pressed="false">Any collision</button>
+              <button type="button" data-metric="progress" aria-pressed="false">Progress</button>
+            </div>
+            <div class="bar-chart" aria-labelledby="chart-heading">
+              <div class="bar-row"><div class="bar-label">Frozen Dreamer base</div><div class="bar-track"><div class="bar base" style="width:43.75%"></div></div><span class="bar-value">17.5%</span></div>
+              <div class="bar-row"><div class="bar-label">Temporal LiDAR</div><div class="bar-track"><div class="bar lidar" style="width:27%"></div></div><span class="bar-value">10.8%</span></div>
+              <div class="bar-row"><div class="bar-label">v13 Temporal Safety</div><div class="bar-track"><div class="bar v13" style="width:25%"></div></div><span class="bar-value">10.0%</span></div>
+              <div class="chart-axis" aria-hidden="true"><span>0%</span><span>10%</span><span>20%</span><span>30%</span><span>40%</span></div>
+            </div>
+            <p class="chart-caption" id="chart-caption" aria-live="polite">Hazard collisions fall by 7.5 percentage points vs base (paired cluster 95% CI: −11.7 to −3.3 points).</p>
+          </div>
+          <aside class="results-note"><p class="eyebrow">RISK TO ACTION</p><div class="big-number">−7.5<span>pp</span></div><h3>Fewer hazard collisions.<br>Fewer near misses.</h3><p>Both decrease by 7.5 percentage points relative to base, with paired cluster confidence intervals below zero.</p><dl><div><dt>Intervention</dt><dd>3.8% <span>of frames</span></dd></div><div><dt>Internal progress</dt><dd>0.106 to 0.101</dd></div></dl><p class="evidence-limit">The overall-collision change remains inconclusive; its 95% CI includes zero.</p></aside>
+        </div>
+        <details class="data-details"><summary>View the complete four-seed results</summary><div class="table-scroll" role="region" aria-label="Complete internal confirmation results" tabindex="0"><table><caption>240 intention-to-treat episodes per method. TTC is the median over finite observations.</caption><thead><tr><th scope="col">Method</th><th scope="col">Any collision</th><th scope="col">Hazard collision</th><th scope="col">Near miss</th><th scope="col">TTC (s)</th><th scope="col">Progress</th><th scope="col">Intervention</th></tr></thead><tbody><tr><th scope="row">Frozen Dreamer base</th><td>29.6%</td><td>17.5%</td><td>30.8%</td><td>0.773</td><td>0.106</td><td>0.0%</td></tr><tr><th scope="row">Corrected Temporal LiDAR</th><td>27.9%</td><td>10.8%</td><td>26.2%</td><td>1.016</td><td>0.100</td><td>3.9%</td></tr><tr class="highlight-row"><th scope="row">v13 Temporal Safety</th><td>27.5%</td><td>10.0%</td><td>23.3%</td><td>1.216</td><td>0.101</td><td>3.8%</td></tr></tbody></table></div></details>
+        <div class="additional-evidence">
+          <article><p class="eyebrow">ROUTE-TOKEN ABLATION</p><h3>Route tokens alone<br>do not close the gap.</h3><p>On the separate 450-episode protocol, the token-conditioned policy has <strong>5.3 percentage points more any collision</strong> than the same checkpoint with tokens off (95% CI: +1.3 to +9.6 points).</p><div class="compact-comparison"><div><span>Tokens on</span><strong>36.4%</strong></div><div><span>Tokens off</span><strong>31.1%</strong></div><span class="comparison-note">Any collision · 4 towns · 2 seeds</span></div></article>
+          <article><p class="eyebrow">EXTERNAL SYSTEMS & SCOPE</p><h3>An internal improvement.<br>Transfer remains open.</h3><p>On a common 180-episode slice, released LMDrive and TransFuser systems have lower collision rates than v13. Each retains its native sensors and controller.</p><p class="scope-note">The external slice and four-seed confirmation are separate comparisons. Internal path progress is not CARLA Leaderboard Route Completion or Driving Score.</p><a class="inline-link" href="assets/pdfs/main.pdf#page=11">Read the evaluation and limitations</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="benchmark" aria-labelledby="benchmark-title">
+      <div class="section-heading"><div><p class="eyebrow">LONGTAILBENCH</p><h2 id="benchmark-title">Rare events.<br>Explicit evaluation.</h2></div><p>Twenty parameterized scenario types across four CARLA towns, organized with ISO 34504 scenario categories.</p></div>
+      <div class="benchmark-facts"><div><strong>20</strong><span>scenario types</span></div><div><strong>4</strong><span>CARLA towns</span></div><div><strong>3</strong><span>distinct questions: execution, recognition, reaction</span></div></div>
+      <figure class="gallery-figure"><a href="assets/images/gallery.jpg" aria-label="Open the paper's full scenario gallery"><img src="assets/images/gallery.jpg" alt="Representative LongTailBench front-camera frames, including pedestrian and cyclist crossings, cut-ins, emergency stops, construction, static obstacles, and adverse weather. Border colors denote ISO 34504 categories." width="3055" height="1825" loading="lazy"></a><figcaption>Representative scenarios from the paper. Open the image to inspect the original full-resolution gallery.</figcaption></figure>
+      <div class="protocol-note"><strong>Every predeclared eligible episode counts.</strong><p>Scenario-specific checks verify whether the intended event occurred. Binary safety outcomes use all topology-feasible predeclared launches, including untriggered or unaccepted scenarios. Strict acceptance is reported as exposure, rather than used to filter safety outcomes.</p></div>
+    </section>
+
+    <section class="abstract-section"><div class="section-shell abstract-layout"><div><p class="eyebrow">THE PAPER</p><h2>Abstract</h2></div><p id="abstract-text">Route-following accuracy does not measure how an autonomous driving policy responds to rare hazards. We introduce LongTailBench, a CARLA evaluation with 20 scenario types across four towns, and use it to separate route execution, hazard recognition, and closed-loop reaction. In a strict intention-to-treat comparison of 450 topology-feasible episodes per policy, adding route-maneuver tokens to a DreamerV3 policy does not improve long-tail safety. An instruction-ID-conditioned student distilled from a 7B vision-language teacher exposes a partly decodable hazard signal, but its original camera-based reaction head and maneuver-token override do not establish a closed-loop gain. We therefore evaluate a separate CarDreamVLA v13 Temporal Safety module that combines four-frame raster LiDAR, bird's-eye view, a frozen Dreamer latent, instruction ID, and the base action. A calibrated LiDAR risk anchor activates bounded action correction while the base policy remains frozen. Across four held-out evaluation seeds and 240 episodes per method, hazard-attributed collisions fall from 17.5% to 10.0%, and near misses from 30.8% to 23.3%; internal path progress changes from 0.106 to 0.101. The result supports a safety improvement within the evaluated CARLA policy and sensor configuration. Comparisons with released LMDrive and TransFuser systems use a common LongTailBench protocol and retain their native sensors and controllers.</p></div></section>
+
+    <section class="section-shell content-section resources-section" id="resources" aria-labelledby="resources-title">
+      <div class="section-heading"><div><p class="eyebrow">EXPLORE THE WORK</p><h2 id="resources-title">Paper & resources</h2></div><p>The camera-ready paper, supplementary material, and conference poster.</p></div>
+      <div class="resource-list"><a href="assets/pdfs/main.pdf"><div><span class="resource-type">PAPER · PDF</span><h3>Camera-ready paper</h3><p>Method, evaluation, and scope of the findings</p></div><span class="resource-pages">15 pages</span></a><a href="assets/pdfs/supplementary.pdf"><div><span class="resource-type">SUPPLEMENTARY · PDF</span><h3>Supplementary material</h3><p>Protocols, implementation details, and additional analysis</p></div><span class="resource-pages">9 pages</span></a><a href="assets/pdfs/poster.pdf"><div><span class="resource-type">POSTER · PDF</span><h3>ACML 2026 poster</h3><p>A visual overview of the work</p></div><span class="resource-pages">A0 portrait</span></a></div>
+      <div class="citation"><div class="citation-top"><h3>Citation</h3><button type="button" id="copy-citation">Copy BibTeX</button></div><pre><code id="bibtex">@inproceedings{cao2026maneuver,
+  title     = {Maneuver Accuracy Is Not Safety: Long-Tail Hazard
+               Reaction in VLA Driving with World Models},
+  author    = {Cao, Xuewei and Liu, Binhui and
+               Zhang, Yanyong and Xia, Yan},
+  booktitle = {Asian Conference on Machine Learning (ACML)},
+  year      = {2026}
+}</code></pre><p id="copy-status" role="status" aria-live="polite"></p></div>
+      <div class="acknowledgments"><h3>Acknowledgments</h3><p>This work was supported by USTC-JAC Smart Electric Vehicle Joint Lab.<br>This work was supported by the Anhui Provincial Natural Science Foundation (Grant No. 2508085MF142).</p></div>
+    </section>
+  </main>
+  <footer><div class="section-shell footer-content"><a class="wordmark" href="#top">CarDream<span class="brand-accent">VLA</span></a><p>ACML 2026 · Long-tail driving safety</p><div><a href="mailto:yan.xia@ustc.edu.cn">Contact</a><a href="https://github.com/Patience-Joey/CarDreamVLA">Website source</a></div></div></footer>
+</body>
+</html>
